@@ -7,8 +7,8 @@ $("#join-form").on("submit", ev => {
   ev.preventDefault();
 
   var fd = new FormData(ev.target);
-  var international = fd.get("international") || undefined;
-  if (international !== undefined) international = !!+international;
+  var international = fd.get("international") || null;
+  if (international !== null) international = !!+international;
 
   var givenName = fd.get("firstName");
   var data = {
