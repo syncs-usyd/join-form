@@ -51,5 +51,7 @@ $("#join-form").on("submit", ev => {
     });
 });
 
+$("#expected-grad-year").attr("min", new Date().getFullYear());
+
 $("#success-close").on("click", _ => $("#success-alert").hide());
 $("#error-close").on("click", _ => $("#error-alert").hide());
