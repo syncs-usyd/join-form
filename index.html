@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Join SUITS!</title>
+    <link rel="stylesheet" href="static/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/custom.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <a class="navbar-brand" href="https://suits.org.au">SUITS</a>
+    </nav>
+
+    <div class="container mt-3">
+      <noscript>
+        <div class="alert alert-danger" role="alert">
+          Our join form requires JavaScript. Apologies for the inconvenience.
+        </div>
+      </noscript>
+      <div id="success-alert" class="alert alert-dismissable alert-success collapse" role="alert">
+        <button id="success-close" type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="alert-heading">Thank you <span id="success-name"></span> for joining SUITS.</h5>
+        We hope you enjoy our events!
+      </div>
+      <div id="error-alert" class="alert alert-dismissable alert-warning collapse" role="alert">
+        <button id="error-close" type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        An error occurred when submitting your form.
+      </div>
+
+      <div class="card m-auto mt-3" id="form-card">
+        <h1 class="card-header">Join SUITS!</h1>
+        <div class="card-body">
+          <form id="join-form">
+            <div class="row">
+              <div class="col form-group">
+                <label for="given-name">Given name <span class="required-mark">*</span></label>
+                <input
+                  id="given-name"
+                  type="text"
+                  class="form-control"
+                  name="firstName"
+                  autocomplete="given-name"
+                  placeholder="Clara"
+                  required
+                  autofocus
+                />
+              </div>
+              <div class="col form-group">
+                <label for="surname">Surname <span class="required-mark">*</span></label>
+                <input
+                  id="surname"
+                  type="text"
+                  class="form-control"
+                  name="lastName"
+                  autocomplete="family-name"
+                  placeholder="Oswald"
+                  required
+                />
+              </div>
+            </div>
+            <fieldset class="form-group" name="gender" id="gender-set">
+              <legend>Gender</legend>
+              <div class="custom-control custom-radio">
+                <input id="gender-female" class="custom-control-input" type="radio" name="gender" value="female" />
+                <label for="gender-female" class="custom-control-label">Female</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input id="gender-male" class="custom-control-input" type="radio" name="gender" value="male" />
+                <label for="gender-male" class="custom-control-label">Male</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input id="gender-other" class="custom-control-input" type="radio" name="gender" value="other" />
+                <label for="gender-other" class="custom-control-label">Other</label>
+              </div>
+            </fieldset>
+
+            <div class="form-group">
+              <label for="email">Email address <span class="required-mark">*</span></label>
+              <input id="email" type="email" class="form-control" name="email" placeholder="clara.oswald@tardis.local" required />
+            </div>
+            <fieldset class="row">
+              <div class="col form-group">
+                <label for="access">Access number</label>
+                <input
+                  id="access"
+                  type="text"
+                  class="form-control"
+                  name="access"
+                  placeholder="1901234"
+                  inputmode="numeric"
+                  pattern="\d{6,7}"
+                />
+              </div>
+              <div class="col form-group">
+                <label for="sid">Student ID</label>
+                <input
+                  id="sid"
+                  type="text"
+                  class="form-control"
+                  name="sid"
+                  placeholder="490123456"
+                  inputmode="numeric"
+                  pattern="\d{9}"
+                />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <div class="form-group row">
+                <label for="expected-grad-year" class="col col-form-label">In what year do you expect to graduate?</label>
+                <div class="col-sm-4">
+                  <input id="expected-grad-year" type="number" class="form-control" name="expectedGradYear" placeholder="2019" />
+                </div>
+              </div>
+              <div class="form-group custom-control custom-checkbox">
+                <input id="doing-it" type="checkbox" class="custom-control-input" name="doingIT" />
+                <label for="doing-it" class="custom-control-label">
+                  I am studying an IT/computer science related degree or major.
+                </label>
+              </div>
+              <fieldset class="form-group">
+                <div class="custom-control custom-radio">
+                  <input id="international" type="radio" class="custom-control-input" name="international" value="1" />
+                  <label for="international" class="custom-control-label">I am an international student.</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="domestic" type="radio" class="custom-control-input" name="international" value="0" />
+                  <label for="domestic" class="custom-control-label">I am a domestic student.</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="int-reserved" type="radio" class="custom-control-input" name="international" value="" checked />
+                  <label for="int-reserved" class="custom-control-label">I prefer not to answer.</label>
+                </div>
+              </fieldset>
+              <div class="form-group custom-control custom-switch">
+                <input id="newsletter" type="checkbox" class="custom-control-input" name="newsletter" />
+                <label for="newsletter" class="custom-control-label">I wish to receive weekly email updates from SUITS.</label>
+              </div>
+            </fieldset>
+
+            <button id="submit" type="submit" class="btn btn-primary float-right">
+              <span id="submit-spinner" class="spinner-border spinner-border-sm collapse" role="status">
+                <span class="sr-only">Loading...</span>
+              </span>
+              Join SUITS
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha256-ZvOgfh+ptkpoa2Y4HkRY28ir89u/+VRyDE7sB7hEEcI="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha256-63ld7aiYP6UxBifJWEzz87ldJyVnETUABZAYs5Qcsmc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="static/main.js"></script>
+  </body>
+</html>

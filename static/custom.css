@@ -1,0 +1,20 @@
+body,
+.form-control,
+.col-form-label,
+#gender-set > legend {
+  font-size: 14px;
+}
+
+#form-card {
+  max-width: 500px;
+}
+
+.required-mark {
+  color: red;
+}
+
+#gender-set {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
