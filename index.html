@@ -36,7 +36,7 @@
         <h1 class="card-header">Join SUITS!</h1>
         <div class="card-body">
           <form id="join-form">
-            <div class="row">
+            <fieldset class="row">
               <div class="col form-group">
                 <label for="given-name">Given name <span class="required-mark">*</span></label>
                 <input
@@ -62,7 +62,7 @@
                   required
                 />
               </div>
-            </div>
+            </fieldset>
             <fieldset class="form-group" name="gender" id="gender-set">
               <legend>Gender</legend>
               <div class="custom-control custom-radio">
@@ -138,8 +138,20 @@
                 </div>
               </fieldset>
               <div class="form-group custom-control custom-switch">
-                <input id="newsletter" type="checkbox" class="custom-control-input" name="newsletter" />
-                <label for="newsletter" class="custom-control-label">I wish to receive weekly email updates from SUITS.</label>
+                <input
+                  id="newsletter"
+                  type="checkbox"
+                  class="custom-control-input"
+                  name="newsletter"
+                  aria-describedby="newsletter-detail"
+                />
+                <label for="newsletter" class="custom-control-label">
+                  I wish to receive the weekly newsletter and other (infrequent) communications from SUITS.
+                </label>
+                <small id="newsletter-detail" class="form-text text-muted">
+                  The weekly SUITS newsletter includes updates on open internship and grad positions as well as the latest in
+                  industry, society and diversity-focused events.
+                </small>
               </div>
             </fieldset>
 
