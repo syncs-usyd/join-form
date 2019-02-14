@@ -50,7 +50,7 @@ $("#join-form").on("submit", ev => {
       $("#submit").attr("disabled", false);
     });
 });
-$("#submit").attr("type", "submit");
+$("#submit").attr({ type: "submit", disabled: false });
 
 $("#expected-grad-year").attr("min", new Date().getFullYear());
 
