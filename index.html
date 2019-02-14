@@ -35,7 +35,7 @@
       <div class="card m-auto mt-3" id="form-card">
         <h1 class="card-header">Join SUITS!</h1>
         <div class="card-body">
-          <form id="join-form">
+          <form id="join-form" method="post">
             <fieldset class="row">
               <div class="col form-group">
                 <label for="given-name">Given name <span class="required-mark">*</span></label>
@@ -156,7 +156,7 @@
               </div>
             </fieldset>
 
-            <button id="submit" type="submit" class="btn btn-primary float-right">
+            <button id="submit" class="btn btn-primary float-right">
               <span id="submit-spinner" class="spinner-border spinner-border-sm collapse" role="status">
                 <span class="sr-only">Loading...</span>
               </span>
