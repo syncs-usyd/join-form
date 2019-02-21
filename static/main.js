@@ -39,6 +39,7 @@ $("#join-form").on("submit", ev => {
     .then(_ => {
       showSuccess(givenName);
       ev.target.reset();
+      scroll(0, 0);
       $("#givenName").focus();
     })
     .catch(error => {
