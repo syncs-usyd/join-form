@@ -53,6 +53,10 @@ $("#join-form").on("submit", ev => {
 });
 $("#submit").attr({ type: "submit", disabled: false });
 
+$("#email").on("change", ev => {
+  if (/^[a-z]{4}\d{4}$/.test(ev.target.value))
+    ev.target.value += "@uni.sydney.edu.au";
+});
 $("#expected-grad-year").attr("min", new Date().getFullYear());
 
 $("#success-close").on("click", _ => $("#success-alert").hide());
