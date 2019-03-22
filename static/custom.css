@@ -18,3 +18,7 @@ body,
   justify-content: space-around;
   align-items: center;
 }
+
+#submit:not([disabled]) > #submit-spinner {
+  display: none;
+}

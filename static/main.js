@@ -26,7 +26,6 @@ $("#join-form").on("submit", ev => {
   };
 
   $("#submit").attr("disabled", true);
-  $("#submit-spinner").removeClass("collapse");
 
   console.log(data);
 
@@ -47,7 +46,6 @@ $("#join-form").on("submit", ev => {
       $("#error-alert").show();
     })
     .finally(() => {
-      $("#submit-spinner").addClass("collapse");
       $("#submit").attr("disabled", false);
     });
 });
