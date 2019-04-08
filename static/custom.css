@@ -13,6 +13,21 @@ body,
   color: red;
 }
 
+.bg-syncs {
+  /* background-color: #1e2f8f; */
+  height: 64px;
+  background: white;
+  z-index: 100;
+  padding: 0px 
+}
+
+.logo {
+  padding: 11px 0;
+  vertical-align: middle;
+  float: left;
+  height: 64px;
+}
+
 #gender-set {
   display: flex;
   justify-content: space-around;
