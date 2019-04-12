@@ -13,6 +13,14 @@ body,
   color: red;
 }
 
+.bg-syncs {
+  /* background-color: #1e2f8f; */
+  height: 64px;
+  background: white;
+  z-index: 100;
+  padding: 0px;
+}
+
 #gender-set {
   display: flex;
   justify-content: space-around;
