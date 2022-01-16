@@ -16,7 +16,6 @@ $("#join-form").on("submit", ev => {
     lastName: fd.get("lastName"),
     gender: fd.get("gender") || undefined,
     email: fd.get("email"),
-    access: +fd.get("access") || undefined,
     sid: +fd.get("sid") || undefined,
     newsletter: fd.get("newsletter") == "on",
     doingIT: fd.get("doingIT") == "on",
@@ -35,7 +34,11 @@ $("#join-form").on("submit", ev => {
     headers: { "Content-Type": "application/json; charset=utf-8" },
     body: JSON.stringify(data)
   })
-    .then(_ => {
+    .then(response => {
+      if (response.status >= 400 && response.status < 600) {
+        throw new Error(`Got error status code ${response.status} from API`)
+      }
+
       showSuccess(givenName);
       ev.target.reset();
       scroll(0, 0);

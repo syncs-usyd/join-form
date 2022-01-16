@@ -88,23 +88,9 @@
             </div>
             <fieldset class="row">
               <div class="col form-group">
-                <label for="access">
-                  USU membership number <span class="required-mark">*</span>
-                  <a href="https://usu.edu.au/Membership.aspx"><img src="static/help_outline.svg" alt="What is this?"/></a>
+                <label for="sid">
+                  Student ID <span class="required-mark">*</span>
                 </label>
-                <input
-                  id="access"
-                  type="text"
-                  class="form-control"
-                  name="access"
-                  placeholder="1901234"
-                  inputmode="numeric"
-                  pattern="\d{6,7}"
-                  required
-                />
-              </div>
-              <div class="col form-group">
-                <label for="sid">Student ID</label>
                 <input
                   id="sid"
                   type="text"
@@ -113,6 +99,7 @@
                   placeholder="490123456"
                   inputmode="numeric"
                   pattern="\d{7}(\d\d)?"
+                  required
                 />
               </div>
             </fieldset>
